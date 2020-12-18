@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+django = "~=3.1.4"
+djangorestframework = "~=3.12.2"
+django-cors-headers = "~=3.6.0"
+drf-jwt = "~=1.17.3"
+python-jwt = "~=3.3.0"
+python-decouple = "~=3.3"
+dj-database-url = "~=0.5.0"
+psycopg2 = "~=2.8.6"
+cryptography = "~=3.3.1"
+requests = "~=2.25.0"
+django-model-utils = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
