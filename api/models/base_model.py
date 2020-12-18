@@ -9,3 +9,4 @@ class BaseModel(TimeStampedModel):
 
     class Meta:
         abstract = True
+        get_latest_by = "created"

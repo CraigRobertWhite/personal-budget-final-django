@@ -7,4 +7,4 @@ class MonthlyExpense(BaseModel):
     cost = models.IntegerField()
     name = models.TextField()
 
-    user_id = models.ForeignKey('User', related_name='expenses', on_delete=models.CASCADE)
+    user = models.ForeignKey('User', related_name='expenses', on_delete=models.CASCADE)

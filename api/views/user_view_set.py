@@ -1,3 +1,4 @@
+from rest_framework.exceptions import PermissionDenied
 from rest_framework.viewsets import ModelViewSet
 
 from api.models import User
@@ -10,7 +11,7 @@ class UserViewSet(ModelViewSet):
     http_method_names = ['get', 'patch', 'head']
 
     def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
+        raise PermissionDenied()
 
     def retrieve(self, request, *args, **kwargs):
         return super().retrieve(request, *args, **kwargs)
