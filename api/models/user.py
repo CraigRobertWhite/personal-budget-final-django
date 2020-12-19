@@ -10,6 +10,7 @@ class User(BaseModel, AbstractBaseUser):
     email = models.EmailField()
     first_name = models.TextField()
     last_name = models.TextField()
+    monthly_gross_income = models.IntegerField(default=0)
 
     USERNAME_FIELD = 'auth0_id'
     EMAIL_FIELD = 'email'
