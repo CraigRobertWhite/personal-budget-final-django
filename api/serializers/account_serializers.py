@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from api.models import Account
+from api.models import Account, AccountTransaction
 
 
 class AccountSerializer(serializers.ModelSerializer):
@@ -15,9 +15,9 @@ class AccountSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created', 'transactions', 'balance']
 
     def get_balance(self, obj):
-        if latest_transaction := obj.transactions.latest():
-            return latest_transaction.amount
-        else:
+        try:
+            return obj.transactions.latest().amount
+        except AccountTransaction.DoesNotExist as e:
             return 0
 
     def create(self, validated_data):
