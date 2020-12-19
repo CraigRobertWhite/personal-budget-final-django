@@ -5,8 +5,10 @@ from . import views
 
 router = SimpleRouter()
 
-router.register(r'users', views.UserViewSet)
 router.register(r'accounts', views.AccountViewSet)
+router.register(r'goals', views.GoalViewSet)
+router.register(r'monthly_expenses', views.MonthlyExpenseViewSet)
+router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

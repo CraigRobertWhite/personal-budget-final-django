@@ -8,3 +8,8 @@ class Goal(BaseModel):
     name = models.TextField()
 
     user = models.ForeignKey('User', related_name='goals', on_delete=models.CASCADE)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['name', 'user'], name='unique_user_goals')
+        ]

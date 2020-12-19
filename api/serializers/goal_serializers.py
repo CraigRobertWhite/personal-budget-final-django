@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
-from api.models import MonthlyExpense
+from api.models import Goal
 
 
-class MonthlyExpenseSerializer(serializers.ModelSerializer):
+class GoalSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MonthlyExpense
-        fields = ['id', 'created', 'cost', 'name']
+        model = Goal
+        fields = ['id', 'created', 'amount', 'name']
         read_only_fields = ['id', 'created']
 
     def create(self, validated_data):
