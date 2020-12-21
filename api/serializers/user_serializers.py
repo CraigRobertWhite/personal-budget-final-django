@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'auth0_id', 'email', 'first_name', 'last_name', 'accounts', 'monthly_expenses',
-                  'monthly_gross_income', 'goals', 'net_worth']
+                  'monthly_gross_income', 'goals', 'net_worth', 'finished_registration']
         read_only_fields = ['id', 'auth0_id', 'accounts', 'monthly_expenses', 'goals']
 
     def get_net_worth(self, obj):
